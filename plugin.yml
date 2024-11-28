@@ -1,0 +1,9 @@
+---
+name: MacePM
+version: 1.0.0
+main: XeonCh\Mace\Main
+api: 5.0.0
+src-namespace-prefix: XeonCh\Mace
+author: XeonCh
+description: This plugin is still under development
+...
