@@ -18,8 +18,6 @@ use XeonCh\Mace\item\Mace;
 
 class EventListener implements Listener
 {
-
-    private $playerPreviousY = [];
     private $playerFallDistance = [];
 
     public function onPlayerMove(PlayerMoveEvent $event)
