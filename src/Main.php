@@ -18,12 +18,12 @@ use pocketmine\world\format\io\GlobalItemDataHandlers;
 use pocketmine\world\World;
 use XeonCh\Mace\entity\WindCharge;
 
-class Main extends PluginBase, ItemTypeNames
+class Main extends PluginBase
 {
 
     public function onEnable() : void
 	{
-		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
+	$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         EntityFactory::getInstance()->register(WindCharge::class, function (World $world, CompoundTag $nbt): WindCharge {
             return new WindCharge(EntityDataHelper::parseLocation($nbt, $world), null, $nbt);
         }, ['wind_charge', 'minecraft:wind_charge_projectile']);
@@ -45,8 +45,8 @@ class Main extends PluginBase, ItemTypeNames
     {
         $mace = ExtraItems::MACE();
         $wind = ExtraItems::WIND();
-        self::registerSimpleItem(ItemTypeNames::MACE, $mace, ["mace_xeon", "mace_item"]);
-        self::registerSimpleItem(ItemTypeNames::WIND_CHARGE, $wind, ["wind_xeon", "wind", "wind_charge_item"]);
+        self::registerSimpleItem("minecraft:mace", $mace, ["mace_xeon", "mace_item"]);
+        self::registerSimpleItem("minecraft:wind_charge", $wind, ["wind_xeon", "wind", "wind_charge_item"]);
     }
 
     /**
