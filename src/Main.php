@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace XeonCh\Mace;
 
+use pocketmine\data\bedrock\item\ItemTypeNames;
 use pocketmine\data\bedrock\item\SavedItemData;
 use pocketmine\entity\EntityDataHelper;
 use pocketmine\entity\EntityFactory;
@@ -17,15 +18,10 @@ use pocketmine\world\format\io\GlobalItemDataHandlers;
 use pocketmine\world\World;
 use XeonCh\Mace\entity\WindCharge;
 
-class Main extends PluginBase
-{
+class Main extends PluginBase implements ItemTypeNames{
 
-    public const MACE = "minecraft:mace";
-    public const WIND_CHARGE = "minecraft:wind_charge";
-
-    public function onEnable(): void
-    {
-        $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
+    public function onEnable() : void{
+		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         EntityFactory::getInstance()->register(WindCharge::class, function (World $world, CompoundTag $nbt): WindCharge {
             return new WindCharge(EntityDataHelper::parseLocation($nbt, $world), null, $nbt);
         }, ['wind_charge', 'minecraft:wind_charge_projectile']);
