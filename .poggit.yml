@@ -4,5 +4,6 @@ branches:
 - main
 projects:
   MacePM:
+    icon: "icon.gif"
     path: ""
 ...
