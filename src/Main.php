@@ -21,6 +21,9 @@ use XeonCh\Mace\entity\WindCharge;
 class Main extends PluginBase
 {
 
+    public const MACE = "minecraft:mace";
+    public const WIND_CHARGE = "minecraft:wind_charge";
+
     public function onEnable(): void
     {
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
@@ -45,8 +48,8 @@ class Main extends PluginBase
     {
         $mace = ExtraItems::MACE();
         $wind = ExtraItems::WIND();
-        self::registerSimpleItem(ItemTypeNames::MACE, $mace, ["mace_xeon", "mace_item"]);
-        self::registerSimpleItem(ItemTypeNames::WIND_CHARGE, $wind, ["wind_xeon", "wind", "wind_charge_item"]);
+        self::registerSimpleItem(self::MACE, $mace, ["mace_xeon", "mace_item"]);
+        self::registerSimpleItem(self::WIND_CHARGE, $wind, ["wind_xeon", "wind", "wind_charge_item"]);
     }
 
     /**
