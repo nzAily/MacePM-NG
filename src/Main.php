@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace XeonCh\Mace;
 
-use pocketmine\data\bedrock\item\ItemTypeNames;
 use pocketmine\data\bedrock\item\SavedItemData;
 use pocketmine\entity\EntityDataHelper;
 use pocketmine\entity\EntityFactory;
