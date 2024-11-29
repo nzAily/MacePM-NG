@@ -18,7 +18,7 @@ use pocketmine\world\format\io\GlobalItemDataHandlers;
 use pocketmine\world\World;
 use XeonCh\Mace\entity\WindCharge;
 
-class Main extends PluginBase implements ItemTypeNames
+class Main extends PluginBase, ItemTypeNames
 {
 
     public function onEnable() : void
