@@ -45,8 +45,8 @@ class Main extends PluginBase implements ItemTypeNames
     {
         $mace = ExtraItems::MACE();
         $wind = ExtraItems::WIND();
-        self::registerSimpleItem(self::MACE, $mace, ["mace_xeon", "mace_item"]);
-        self::registerSimpleItem(self::WIND_CHARGE, $wind, ["wind_xeon", "wind", "wind_charge_item"]);
+        self::registerSimpleItem(ItemTypeNames::MACE, $mace, ["mace_xeon", "mace_item"]);
+        self::registerSimpleItem(ItemTypeNames::WIND_CHARGE, $wind, ["wind_xeon", "wind", "wind_charge_item"]);
     }
 
     /**
