@@ -18,9 +18,11 @@ use pocketmine\world\format\io\GlobalItemDataHandlers;
 use pocketmine\world\World;
 use XeonCh\Mace\entity\WindCharge;
 
-class Main extends PluginBase implements ItemTypeNames{
+class Main extends PluginBase implements ItemTypeNames
+{
 
-    public function onEnable() : void{
+    public function onEnable() : void
+	{
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         EntityFactory::getInstance()->register(WindCharge::class, function (World $world, CompoundTag $nbt): WindCharge {
             return new WindCharge(EntityDataHelper::parseLocation($nbt, $world), null, $nbt);
