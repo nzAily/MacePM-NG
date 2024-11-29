@@ -17,9 +17,11 @@ use XeonCh\Mace\particle\WindParticle;
 
 class WindCharge extends Throwable
 {
+    public const WIND_CHARGE_PROJECTILE = "minecraft:wind_charge_projectile";
+
     public static function getNetworkTypeId(): string
     {
-        return EntityIds::WIND_CHARGE_PROJECTILE;
+        return self::WIND_CHARGE_PROJECTILE;
     }
 
     protected function onHit(ProjectileHitEvent $event): void
