@@ -1,18 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace XeonCh\Mace\particle;
 
 use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\protocol\LevelEventPacket;
-use pocketmine\world\particle\Particle;
+use pocketmine\network\mcpe\protocol\types\ParticleIds;
 
-class WindParticle implements Particle
-{
+class WindExplosion implements Particle{
 
-    public const WIND_EXPLOSION = 91;
-
-    public function encode(Vector3 $pos): array
-    {
-        return [LevelEventPacket::standardParticle(self::WIND_EXPLOSION, 0, $pos)];
-    }
+	public function encode(Vector3 $pos) : array{
+		return [LevelEventPacket::standardParticle(ParticleIds::WIND_EXPLOSION, 0, $pos)];
+	}
 }
